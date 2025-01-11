@@ -4,9 +4,9 @@ import Header from './header'
 function App() {
   return (
     <>
-      <Header></Header>
+      <Header/>
       <div>
-        <h1 id='main'>Title</h1>
+        <h1>Plant-ly</h1>
       </div>
     </>
   )

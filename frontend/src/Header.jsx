@@ -1,12 +1,12 @@
-import { Button } from '@chakra-ui/react'
+import "./Header.css"
 
 function Header() {
   return (
-    <>
-      <div>
-        <Button>Button</Button>      
+      <div id='tealgreen'>
+        <span id='buttoncolor'>
+          <button id='login'>Login</button>
+        </span>
       </div>
-    </>
   )
 }
 

@@ -1,0 +1,23 @@
+
+
+#tealgreen {
+    background-color: rgb(125, 208, 174);
+    padding: 10px;
+}
+
+#login {
+    text-align: right;
+    padding-right: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(83,165,132);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+#login:hover {
+    background-color: rgb(83,165,132);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 7px;
+  }
