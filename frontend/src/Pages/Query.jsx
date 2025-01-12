@@ -7,26 +7,7 @@ import { axiosPrivate } from "@/services/apiClient";
 function Query() {
   const [input, setInput] = useState("");
   const { register, getValues, setValue } = useForm();
-  const [plants, setPlants] = useState([
-    {
-      common_name: "Spathiphyllum group",
-      scientific_name: "Spathiphyllum",
-      watering: "average",
-      sunlight: "full shade",
-      benefits:
-        "Also known as the Peace Lily, this plant improves mental clarity and focus by filtering common toxins from the air we breathe. Its pure white flowers are said to have a peaceful, calming effect.",
-      imageUrl: "https://perenual.com/storage/image/upgrade_access.jpg",
-    },
-    {
-      common_name: "Boston Fern",
-      scientific_name: "Nephrolepis exaltata",
-      watering: "frequent",
-      sunlight: "full shade",
-      benefits:
-        "The Boston Fern is a natural air humidifier, helping to keep respiratory issues at bay. Its lush, vibrant greenery is also a natural mood booster.",
-      imageUrl: "https://perenual.com/storage/image/upgrade_access.jpg",
-    },
-  ]);
+  const [plants, setPlants] = useState([]);
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -38,7 +19,8 @@ function Query() {
     event.preventDefault();
     try {
       axiosPrivate.post("/search", getValues()).then(({ data }) => {
-        setPlants(data);
+        const valuesArray = Object.values(data);
+        setPlants(valuesArray);
       });
     } catch (error) {
       console.error("Error submitting the query:", error);

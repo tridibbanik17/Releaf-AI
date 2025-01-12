@@ -1,13 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
 import CssBaseline from '@mui/material/CssBaseline';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
@@ -60,68 +55,83 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
 }));
 
 function LogIn() {
-
-  const {register, handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axiosPrivate.post('/auth/login', data);
+      console.log('Login successful:', response.data);
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('Login failed. Please check your credentials and try again.');
+    }
+  };
 
   return (
     <>
-      <div id='bgcolor'>
+      <div id="bgcolor">
         <CssBaseline enableColorScheme />
         <SignInContainer direction="column" justifyContent="space-between">
           <Card variant="outlined">
             <Typography
               component="h1"
               variant="h4"
-              sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)', fontWeight: 'bold', textAlign: 'center', padding: '20px'}}
+              sx={{
+                width: '100%',
+                fontSize: 'clamp(2rem, 10vw, 2.15rem)',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                padding: '20px',
+              }}
             >
               Log In
             </Typography>
             <Box
+              component="form"
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 width: '100%',
-                gap: 1,
+                gap: 2,
               }}
             >
-                <FormControl onSubmit={handleSubmit(async (data) => {
-                const response = await axiosPrivate.post("/auth/login", data);
-                navigate("/dashboard");
-                console.log(response);
-              })}>
-                  <FormLabel>Username</FormLabel>
-                  <TextField
-                    id="username"
-                    type="username"
-                    placeholder="username"
-                    fullWidth
-                    variant="outlined"
-                    {...register("username")}
-                  />
-                </FormControl>
-                <FormControl>
-                  <FormLabel>Password</FormLabel>
-                  <TextField
-                    id="password"
-                    type="password"
-                    placeholder="••••••••••"
-                    fullWidth
-                    variant="outlined"
-                    {...register("password")}
-                  />
-                </FormControl>
-                <Button type="submit" fullWidth variant="contained" id='fillgreen'>
-                  Log in
-                </Button>
+              <Box>
+                <FormLabel>Username</FormLabel>
+                <TextField
+                  id="username"
+                  type="text"
+                  placeholder="username"
+                  fullWidth
+                  variant="outlined"
+                  {...register('username')}
+                  sx={{ marginTop: 1 }}
+                />
+              </Box>
+              <Box>
+                <FormLabel>Password</FormLabel>
+                <TextField
+                  id="password"
+                  type="password"
+                  placeholder="••••••••••"
+                  fullWidth
+                  variant="outlined"
+                  {...register('password')}
+                  sx={{ marginTop: 1 }}
+                />
+              </Box>
+              <Button type="submit" fullWidth variant="contained" id="fillgreen">
+                Log in
+              </Button>
             </Box>
           </Card>
         </SignInContainer>
       </div>
-      
     </>
   );
 }
 
-
-export default LogIn
+export default LogIn;

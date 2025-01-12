@@ -68,9 +68,9 @@ router.post("/plants", async (req, res) => {
     const plantRes = JSON.parse(response.message.content[0].text);
 
     // Get an image
-    const url = `https://trefle.io/api/v1/plants?token=${process.env.PLANT_API_KEY}&q=${plantRes.scientific_name}`;
+    const url = `https://perenual.com/api/species-list?key=${process.env.PLANT_API_KEY}&q=${plantRes.scientific_name}`;
     const imagesResponse = await axios.get(url);
-    const imageUrl = imagesResponse.data.data[0].image_url;
+    const imageUrl = imagesResponse.data.data[0].default_image.original_url;
 
     const plant = await Plant.create({
       user_id: req.user.id,
