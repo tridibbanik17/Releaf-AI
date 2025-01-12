@@ -75,7 +75,9 @@ export function PlantCard({ plant, onClick }) {
 function AddCard({setCards}) {
   return (
     <div className="add-card">
+      <a display="none" href="http://localhost:5177/dashboard/add">
       <button onClick={setCards}>+</button>
+      </a>
     </div>
   );
 }
