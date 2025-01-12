@@ -12,6 +12,8 @@ function Header() {
               releaf
             </li>
             <Link to="/login" id='nav'>LOGIN</Link>
+            <Link to="signup" id='nav'>SIGN UP</Link>
+            <Link to="/query" id='nav'>QUERY</Link>
             <Link to="/" id='nav'>HOME</Link>
           </ul>
         </div>
