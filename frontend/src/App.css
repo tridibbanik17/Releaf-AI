@@ -1,5 +1,52 @@
 #main {
-  font-size: 50px;
+  font-size: 150px;
   text-align: center;
   margin-top: 150px;
+}
+
+#image {
+  background-image: url("assets/plants.jpg");
+  padding: 175px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  background-color: 	#bcecd8;
+}
+
+#divide {
+  display: flex;
+  padding: 60px;
+  font-size: 20px;
+}
+
+#resize{
+  width: 40%;
+  height: auto;
+  margin-left: 45px;
+}
+
+#lefttext {
+  padding: 15px;
+  font-size: 100px;
+}
+
+#bottomtext {
+  font-size: 40px;
+  padding: 60px;
+}
+
+#hovertest:hover {
+  text-decoration: underline;
+}
+
+#adjustsize {
+  width: 100px;
+  height: auto;
+}
+
+#logo {
+  text-align: center;
 }
