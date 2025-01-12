@@ -2,6 +2,7 @@ import Home from "./Home.jsx"
 import Page2 from "./Pages/Page2.jsx"
 import Header from "./Pages/Header.jsx"
 import { Route, Routes } from "react-router-dom"
+import SignUp from './Pages/SignUp.jsx'
 
 function App() {
     return (
