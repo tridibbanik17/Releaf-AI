@@ -1,23 +1,44 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 #tealgreen {
-    background-color: rgb(125, 208, 174);
-    padding: 10px;
+    background-color: white;
+    padding: 7px;
+    overflow: hidden;
 }
 
-#login {
-    text-align: right;
+
+#nav {
     padding-right: 5px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: rgb(83,165,132);
-    color: #ffffff;
-    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
     padding: 7px;
+    font-size: large;
+    color: rgb(21, 87, 60);
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: stretch;
+    height: 100%;
 }
 
-#login:hover {
-    background-color: rgb(83,165,132);
-    color: #ffffff;
-    border-radius: 5px;
+#nav:hover {
+    background-color: 	#7dd0ae;
+}
+
+#nav2 {
+    font-family: 'Inter', sans-serif;
     padding: 7px;
-  }
+    padding-left: 10px;
+    font-size: 23px;
+    color: rgb(21, 87, 60);
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#adjustsize {
+    float: left;
+    overflow: hidden;
+    width: 50px;
+}
