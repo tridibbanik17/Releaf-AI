@@ -25,7 +25,8 @@ function Page2() {
 
   return (
     <>
-      <h1 className="dash-header">Welcome</h1>
+      <h1 id="introtext">Welcome to your home garden!</h1>
+      <h2 id="bodytext">Keep track of the house plants in your home here</h2>
 
       <div className="dash-card-container">
         {plants.map((plant) => (

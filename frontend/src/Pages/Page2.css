@@ -3,7 +3,6 @@
   overflow-x:auto;
 }
 
-
 .card {
   width: 250px;
   height:300px;
@@ -76,6 +75,21 @@
   font-size: 2.5rem;
   color: #2d6a4f;
   margin-bottom: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#introtext {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 80px;
+  font-size: 45px;
+  text-align: center;
+}
+
+#bodytext {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: center;
 }
 
 /* Card container */
