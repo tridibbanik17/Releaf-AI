@@ -1,49 +1,121 @@
-import "./Query.css"
+import "./Query.css";
 import TextField from "@mui/material/TextField";
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { axiosPrivate } from "@/services/apiClient";
 
 function Query() {
-    const [input, setInput] = useState('');
-    const [submittedInput, setSubmittedInput] = useState('');
+  const [input, setInput] = useState("");
+  const { register, getValues, setValue } = useForm();
+  const [plants, setPlants] = useState([
+    {
+      common_name: "Spathiphyllum group",
+      scientific_name: "Spathiphyllum",
+      watering: "average",
+      sunlight: "full shade",
+      benefits:
+        "Also known as the Peace Lily, this plant improves mental clarity and focus by filtering common toxins from the air we breathe. Its pure white flowers are said to have a peaceful, calming effect.",
+      imageUrl: "https://perenual.com/storage/image/upgrade_access.jpg",
+    },
+    {
+      common_name: "Boston Fern",
+      scientific_name: "Nephrolepis exaltata",
+      watering: "frequent",
+      sunlight: "full shade",
+      benefits:
+        "The Boston Fern is a natural air humidifier, helping to keep respiratory issues at bay. Its lush, vibrant greenery is also a natural mood booster.",
+      imageUrl: "https://perenual.com/storage/image/upgrade_access.jpg",
+    },
+  ]);
 
-    const handleInputChange = (event) => {
-        setInput(event.target.value);
-    };
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    setInput(value);
+    setValue("query", value);
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault(); 
-        setSubmittedInput(input);
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    try {
+      axiosPrivate.post("/search", getValues()).then(({ data }) => {
+        setPlants(data);
+      });
+    } catch (error) {
+      console.error("Error submitting the query:", error);
+    }
+  };
 
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter') { 
-            handleSubmit(event);
-        }
-    };
-    return (
-        <>
-            <div id='image'>
-                <h2 id='introtext'><b id="greentext">Interested</b> in house plants? Start here.</h2>
-                <h4 id='bodytext'>Start your journey by conversing with AI to give you some ideas.</h4>
-            </div>
-            <div id='box'>
-                <p id='internal'>You typed: {submittedInput}</p>
-            </div>
-            <div className="main" id="searching">
-                <div className="search">
-                    <TextField
-                    id="outlined-basic"
-                    variant="outlined"
-                    fullWidth
-                    label="Search"
-                    value={input}
-                    onChange={handleInputChange}
-                    onKeyDown={handleKeyDown}
-                    />
-                </div>
-            </div>
-        </>
-    );
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+    }
+  };
+
+  return (
+    <>
+      {/* Header Section */}
+      <div id="image">
+        <h2 id="introtext">
+          <b id="greentext">Interested</b> in house plants? Start here.
+        </h2>
+        <h4 id="bodytext">
+          Start your journey by conversing with AI to give you some ideas.
+        </h4>
+      </div>
+
+      {/* Search Box */}
+      <div id="box">
+        <form onSubmit={handleSubmit}>
+          <div id="searching">
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              fullWidth
+              label="Search"
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              {...register("query")}
+            />
+          </div>
+        </form>
+      </div>
+
+      {/* Suggested Plants Section */}
+      <div className="res-results">
+        <h3 className="res-results-title">Suggested Plants</h3>
+        <div className="res-results-container">
+          {plants.length > 0 ? (
+            plants.map((plant, index) => <ResultCard key={index} plant={plant} />)
+          ) : (
+            <p className="res-no-results">No plants found. Try a different search!</p>
+          )}
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Query
+function ResultCard({ plant }) {
+  return (
+    <div className="res-card">
+      <img src={plant.imageUrl} alt={plant.common_name} className="res-card-image" />
+      <div className="res-card-body">
+        <h4 className="res-card-title">{plant.common_name}</h4>
+        <p className="res-card-subtitle">
+          <i>{plant.scientific_name}</i>
+        </p>
+        <div className="res-card-info">
+          <p>
+            <strong>Watering:</strong> {plant.watering}
+          </p>
+          <p>
+            <strong>Sunlight:</strong> {plant.sunlight}
+          </p>
+        </div>
+        <p className="res-card-benefits">{plant.benefits}</p>
+      </div>
+    </div>
+  );
+}
+
+export default Query;

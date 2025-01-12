@@ -13,6 +13,9 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
+import { useForm } from 'react-hook-form';
+import { axiosPrivate } from '@/services/apiClient';
+import { useNavigate } from 'react-router-dom';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -57,6 +60,10 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
 }));
 
 function LogIn() {
+
+  const {register, handleSubmit} = useForm();
+  const navigate = useNavigate();
+
   return (
     <>
       <div id='bgcolor'>
@@ -78,29 +85,37 @@ function LogIn() {
                 gap: 1,
               }}
             >
-              <FormControl>
-                <FormLabel>Email</FormLabel>
-                <TextField
-                  id="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  fullWidth
-                  variant="outlined"
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel>Password</FormLabel>
-                <TextField
-                  id="password"
-                  type="password"
-                  placeholder="••••••••••"
-                  fullWidth
-                  variant="outlined"
-                />
-              </FormControl>
-              <Button type="submit" fullWidth variant="contained" id='fillgreen'>
-                Log in
-              </Button>
+              <form onSubmit={handleSubmit(async (data) => {
+                const response = await axiosPrivate.post("/auth/login", data);
+                navigate("/dashboard");
+                console.log(response);
+              })}>
+                <FormControl>
+                  <FormLabel>Username</FormLabel>
+                  <TextField
+                    id="username"
+                    type="username"
+                    placeholder="your@email.com"
+                    fullWidth
+                    variant="outlined"
+                    {...register("username")}
+                  />
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Password</FormLabel>
+                  <TextField
+                    id="password"
+                    type="password"
+                    placeholder="••••••••••"
+                    fullWidth
+                    variant="outlined"
+                    {...register("password")}
+                  />
+                </FormControl>
+                <Button type="submit" fullWidth variant="contained" id='fillgreen'>
+                  Log in
+                </Button>
+              </form>
             </Box>
           </Card>
         </SignInContainer>

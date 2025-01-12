@@ -1,69 +1,72 @@
+import { axiosPrivate } from "@/services/apiClient";
 import "./Page2.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Page2() {
-  const [selectedCard, setSelectedCard] = useState(null); // State for the selected card
+  const [selectedPlant, setSelectedPlant] = useState(null); // State for the selected plant
+  const [plants, setPlants] = useState([]);
 
-  const [cards, setCards] = useState([
-    { id: 1, imageSrc: "./src/assets/plant.jpg", text: "Plant 1", details: "Details about Plant 1" },
-    { id: 2, imageSrc: "./src/assets/plant.jpg", text: "Plant 2", details: "Details about Plant 2" },
-    { id: 3, imageSrc: "./src/assets/plant.jpg", text: "Plant 3", details: "Details about Plant 3" },
-  ]);
+  useEffect(() => {
+    const getPlants = async () => {
+      try {
+        const { data } = await axiosPrivate.get("/user/plants");
+        setPlants(data);
+      } catch (error) {
+        console.error("Error fetching plants:", error);
+      }
+    };
 
-  const addCard = () => {
-    setCards([...cards, { id: 4, imageSrc: "./src/assets/plant.jpg", text: "Plant 3", details: "Details about Plant 3" }])
-  }
+    getPlants();
+  }, []);
 
-  const deleteCard = (id) => {
-    setCards(cards.filter((card) => card.id !== id));
-  }
-  
-  const handleToggleDetails = (card) => {
-    setSelectedCard(card);
+  const handleToggleDetails = (plant) => {
+    setSelectedPlant(plant);
   };
 
   return (
     <>
-      <h1 id="header">Welcome</h1>
-      
-      <div className="card-container">
-        {cards.map((card) => (
+      <h1 className="dash-header">Welcome</h1>
+
+      <div className="dash-card-container">
+        {plants.map((plant) => (
           <PlantCard
-            key={card.id}
-            imageSrc={card.imageSrc}
-            text={card.text}
-            onClick={() => handleToggleDetails(card)}
-            setCards={deleteCard}
-            id={card.id}
+            key={plant.id}
+            plant={plant}
+            onClick={() => handleToggleDetails(plant)}
           />
         ))}
-        <AddCard setCards={addCard} />
+        <AddCard />
       </div>
 
-      {selectedCard && (
-        <div className="card-details">
-          <h2>Details</h2>
-          <p>{selectedCard.details}</p>
+      {selectedPlant && (
+        <div className="dash-details">
+          <h2 className="dash-details-title">Plant Details</h2>
+          <img
+            src={selectedPlant.imageUrl}
+            alt={selectedPlant.plantName}
+            className="dash-details-image"
+          />
+          <div className="dash-details-info">
+            <h3>{selectedPlant.plantName}</h3>
+            <p><strong>Location:</strong> {selectedPlant.location}</p>
+            {selectedPlant.maintenance && <p><strong>Maintenance:</strong> {selectedPlant.maintenance}</p>}
+            {selectedPlant.sunlight && <p><strong>Sunlight:</strong> {selectedPlant.sunlight}</p>}
+            {selectedPlant.watering && <p><strong>Watering:</strong> {selectedPlant.watering}</p>}
+            {selectedPlant.lifespan && <p><strong>Lifespan:</strong> {selectedPlant.lifespan}</p>}
+            {selectedPlant.generalTips && <p><strong>General Tips:</strong> {selectedPlant.generalTips}</p>}
+            {selectedPlant.benefits && <p><strong>Benefits:</strong> {selectedPlant.benefits}</p>}
+          </div>
         </div>
       )}
     </>
   );
 }
 
-function PlantCard({ imageSrc, text, onClick, setCards, id}) { 
+export function PlantCard({ plant, onClick }) {
   return (
-    <div className="card" onClick={onClick}>
-      <button
-        className="delete-btn"
-        onClick={(e) => {
-          e.stopPropagation(); // Prevents triggering the card click
-          setCards(id);
-        }}
-      >
-        X
-      </button>
-      <img src={imageSrc} alt="Plant" className="card-image" />
-      <div className="card-text">{text}</div>
+    <div className="dash-card" onClick={onClick}>
+      <img src={plant.imageUrl} alt={plant.plantName} className="dash-card-image" />
+      <div className="dash-card-text">{plant.plantName}</div>
     </div>
   );
 }

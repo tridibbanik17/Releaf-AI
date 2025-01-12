@@ -6,12 +6,22 @@ const sequelize = require("./db");
 const initializePassport = require("./passport-config");
 const bodyPaser = require("body-parser");
 const { isAuthenticated } = require("./utils.js");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
 
 initializePassport(passport);
 
 const User = require("./models/User");
+
+const corsOptions = {
+  origin: process.env.ORIGIN || "http://localhost:5173",
+  credentials: true,
+  methods: ["GET", "POST", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 200,
+};
 
 const app = express();
 
@@ -32,6 +42,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyPaser.json());
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+app.use(cookieParser());
+
+console.log("Allowed Origin: ", process.env.ORIGIN || "http://localhost:5173/");
 
 // Routes
 app.use("/auth", authRoutes);
