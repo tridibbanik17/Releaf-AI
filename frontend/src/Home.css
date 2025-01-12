@@ -1,7 +1,7 @@
 #main {
   font-size: 150px;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 80px;
 }
 
 #font {
@@ -9,15 +9,14 @@
 }
 
 #image {
-  background-image: url("./src/assets/plants.jpg");
-  padding: 175px;
-  background-repeat: no-repeat;
+  background-image: url("./src/assets/wood-board.jpg");
+  padding: 10px;
   background-size: cover;
   background-attachment: fixed;
 }
 
 body {
-  background-color: 	#bcecd8;
+  background-color:	#bcecd8;
 }
 
 #divide {
@@ -28,18 +27,32 @@ body {
 
 #resize{
   width: 40%;
-  height: auto;
+  height: 40%;
   margin-left: 45px;
+  float: right;
 }
 
 #lefttext {
   padding: 15px;
   font-size: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #bottomtext {
   font-size: 40px;
-  padding: 60px;
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(21, 87, 60);
+  font-weight: bold;
+}
+
+#hovertest {
+  text-decoration: none;
+  color: rgb(21, 87, 60);
+}
+
+#green {
+  color: rgb(21, 87, 60);
 }
 
 #hovertest:hover {
@@ -53,4 +66,8 @@ body {
 
 #logo {
   text-align: center;
+}
+
+*{
+  margin: 0
 }

@@ -8,17 +8,17 @@
 
 
 #nav {
-    padding-right: 5px;
-    font-family: Inter, serif;
+    font-family: 'Inter', sans-serif;
     padding: 7px;
-    font-size: large;
+    padding-left: 10px;
+    font-size: 23px;
     color: rgb(21, 87, 60);
     float: right;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    align-items: stretch;
-    height: 100%;
+    gap: 2rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #nav2 {
@@ -30,7 +30,7 @@
     float: left;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     font-weight: bold;
     text-decoration: none;
 }

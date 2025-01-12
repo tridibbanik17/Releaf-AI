@@ -7,9 +7,12 @@ function Header() {
       <div id='white'>
         <div>
           <img src="./src/assets/releaf-image2.png" alt="releaf" id='adjustsize'/>
-          <ul id='nav'>
-            <Link to="/" id='nav2'>Home</Link>
-            <Link to="/login" id='nav2'>LOGIN</Link>
+          <ul>
+            <li id='nav2'>
+              releaf
+            </li>
+            <Link to="/login" id='nav'>LOGIN</Link>
+            <Link to="/" id='nav'>HOME</Link>
           </ul>
         </div>
         
