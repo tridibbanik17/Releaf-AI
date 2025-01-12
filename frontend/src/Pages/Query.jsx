@@ -56,7 +56,7 @@ function Query() {
       {/* Header Section */}
       <div id="image">
         <h2 id="introtext">
-          <b id="greentext">Interested</b> in house plants? Start <b id='greentext'>here.</b>
+          <b id="greentext">Interested</b> in house plants? Start <b id='greentext'>here!</b>
         </h2>
         <h4 id="bodytext">
           Start your journey by conversing with AI to give you some ideas.

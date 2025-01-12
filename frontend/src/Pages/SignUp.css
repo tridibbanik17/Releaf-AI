@@ -30,15 +30,6 @@
   transform: translate(-50%, -50%);
 }
 
-/* Header styling */
-h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-  padding:60px;
-  color: #333;
-}
-
-
 /* Input styling */
 input {
   padding: 10px;
