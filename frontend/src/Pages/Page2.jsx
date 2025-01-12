@@ -18,6 +18,7 @@ function Page2() {
         imageSrc="/src/assets/plant.jpg"
         text="Plant 2"
       />
+      <AddCard></AddCard>
       </div>
     </>
   )
@@ -35,13 +36,12 @@ function PlantCard({ imageSrc, text }) {
   }
 
   return (
-    <div className="card-containef">
-      <div className="card" onClick={handleToggleDetails}>
+      <div className="card">
         <button className="delete-btn" onClick={handleDelete}>
           X
         </button>
-        <img src={imageSrc} alt="Plant" className="card-image" />
-        <div className="card-text">{text}</div>
+        <img src={imageSrc} alt="Plant" onClick={handleToggleDetails} className="card-image" />
+        <div className="card-text" onClick={handleToggleDetails}>{text}</div>
 
         {showDetails && (
           <div className="cardDetails">
@@ -49,6 +49,19 @@ function PlantCard({ imageSrc, text }) {
           </div>
         )}
       </div>
+  )
+}
+
+function AddCard() {
+  const handleAdd = () => {
+    
+  }
+
+  return (
+    <div className="add-card">
+      <button onClick={handleAdd}>
+        +
+      </button>
     </div>
   )
 }

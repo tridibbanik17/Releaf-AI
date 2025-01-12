@@ -1,5 +1,5 @@
 .card {
-  width: 300px;
+  width: 250px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
@@ -12,7 +12,7 @@
 
 .card-image {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .card-text {
@@ -20,6 +20,23 @@
   font-size: 16px;
   color: #333;
   background-color: #fafafa;
+}
+
+.add-card {
+  width: 250px;
+  height:250px;
+  overflow:hidden;
+  text-align:center;
+  margin:50px;
+  position:relative;
+  border: 6px dashed #333;
+  border-radius: 16px;
+  font-size:120px;
+  z-index:10;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  color:black;
 }
 
 h1 {
@@ -34,6 +51,7 @@ h1 {
   gap:32px;
   overflow-x:auto;
   scrollbar-color:transparent transparent;
+  user-select:none;
 }
 
 p {
