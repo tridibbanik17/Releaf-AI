@@ -1,5 +1,6 @@
 import "./Page2.css"
 import React, { useState } from 'react'
+//import { SAMPLE_DATA } from "./data";
 
 function Page2() {
   return (
