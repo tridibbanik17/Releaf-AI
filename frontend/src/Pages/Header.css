@@ -9,7 +9,7 @@
 
 #nav {
     padding-right: 5px;
-    font-family: 'Inter', sans-serif;
+    font-family: Inter, serif;
     padding: 7px;
     font-size: large;
     color: rgb(21, 87, 60);
@@ -31,6 +31,8 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #adjustsize {

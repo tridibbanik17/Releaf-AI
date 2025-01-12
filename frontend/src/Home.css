@@ -4,6 +4,10 @@
   margin-top: 150px;
 }
 
+#font {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #image {
   background-image: url("./src/assets/plants.jpg");
   padding: 175px;

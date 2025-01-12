@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 function Page2() {
   return (
     <>
-      <h1>Welcome </h1>
+      <h1 id="header">Welcome </h1>
       <div classname="card-container">
       <PlantCard
         imageSrc="./src/assets/plant.jpg"
@@ -46,7 +46,7 @@ function PlantCard({ imageSrc, text }) {
 
         {showDetails && (
           <div className="cardDetails">
-            <p>Additional card details</p>
+            <p id='additional'>Additional card details</p>
           </div>
         )}
       </div>

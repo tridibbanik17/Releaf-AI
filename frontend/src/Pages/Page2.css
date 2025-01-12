@@ -39,7 +39,7 @@
   color:black;
 }
 
-h1 {
+#header {
   font-size:50px;
   text-align:center;
   padding:100px;
@@ -54,7 +54,7 @@ h1 {
   user-select:none;
 }
 
-p {
+#additional {
   background: black;
 }
 
