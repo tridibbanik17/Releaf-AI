@@ -1,9 +1,10 @@
 const { Sequelize } = require("sequelize");
+require("dotenv").config();
 
 const sequelize = new Sequelize(
   "DeltaHacks2025",
   "postgres",
-  process.env.DB_PASS || "#Tomiwa12",
+  process.env.DB_PASS,
   {
     host: "localhost",
     dialect: "postgres",

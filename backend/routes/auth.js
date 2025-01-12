@@ -19,13 +19,6 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// router.post(
-//   "/login",
-//   passport.authenticate("local", {
-//     failureFlash: false,
-//   })
-// );
-
 router.post("/login", passport.authenticate("local"), (req, res) => {
   res.send("Successful login");
 });
