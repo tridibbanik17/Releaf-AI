@@ -1,0 +1,68 @@
+.card-container {
+  display: flex;
+  overflow-x:auto;
+}
+
+
+.card {
+  width: 250px;
+  height:300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  margin:25px;
+  position:relative;
+}
+
+.card-image {
+  width:250px;
+  height:250px;
+}
+
+.card-text {
+  text-align:center;
+  padding:10px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fafafa;
+}
+
+.add-card {
+  width: 250px;
+  height:250px;
+  overflow:hidden;
+  text-align:center;
+  margin:50px;
+  position:relative;
+  border: 6px dashed #333;
+  border-radius: 16px;
+  font-size:120px;
+  z-index:10;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  color:black;
+}
+
+#header {
+  font-size:50px;
+  text-align:center;
+  padding:100px;
+}
+
+.delete-btn {
+  position:absolute;
+  background-color:grey;
+  color:white;
+  width:24px;
+  height:24px;
+  font-size:14px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  z-index:10;
+}

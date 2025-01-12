@@ -1,0 +1,47 @@
+#introtext {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 80px;
+    font-size: 45px;
+    text-align: center;
+}
+
+#bodytext {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#greentext {
+    color: rgb(21, 87, 60);
+    font-weight: bold;
+}
+
+#image {
+    background-image: url("./src/assets/wood-board.jpg");
+    padding: 10px;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 50px;
+  }
+
+#searching {
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#box {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 250px;
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 7px;
+}
+
+#internal {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
