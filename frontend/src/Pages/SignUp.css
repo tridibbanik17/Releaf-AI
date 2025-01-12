@@ -72,3 +72,8 @@ input:focus {
 #fillgreen {
   background-color: rgb(21, 87, 60);
 }
+
+#formformat {
+  display: inline-block;
+  width: 100%;
+}

@@ -6,7 +6,6 @@
     overflow: hidden;
 }
 
-
 #nav {
     font-family: 'Inter', sans-serif;
     padding: 7px;
@@ -15,10 +14,15 @@
     color: rgb(21, 87, 60);
     float: right;
     display: flex;
+    margin-right: 10px;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1em;
     font-weight: bold;
     text-decoration: none;
+}
+
+#nav:hover {
+    color: #479071;
 }
 
 #nav2 {
@@ -33,6 +37,10 @@
     gap: 2rem;
     font-weight: bold;
     text-decoration: none;
+}
+
+#nav2:hover {
+    color: #479071;
 }
 
 #adjustsize {
