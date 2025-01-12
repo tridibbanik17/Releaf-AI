@@ -1,16 +1,37 @@
+import React, { useState } from 'react';
+import './AddCard.css';
+
 function AddCard() {
-    return (
-        <div class="sign-up-container">
-    <h1>Sign Up</h1>
-    <form>
-      <div class="form-group">
-        <input type="text" id="username" name="username" placeholder="Enter your username" required/>
+  const [image, setImage] = useState('/img-placeholder.svg');
+
+  const updateImage = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log(file);
+      const imageUrl = URL.createObjectURL(file);
+      setImage(imageUrl);
+    }
+  };
+
+  return (
+    <div className="add-container">
+      <div className="card">
+        <h1>Add a Plant</h1>
+        <label className="text-label">Name</label>
+        <input></input>
+        <label className="text-label">Family Name</label>
+        <input></input>
+        <img src={image} alt="Plant" />
+        <label id="image-label" htmlFor="input-file">Upload Image</label>
+        <input
+          type="file"
+          accept="image/jpeg, image/png, image/jpg, image/svg"
+          id="input-file"
+          onChange={updateImage}
+        />
       </div>
-      <div>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required/>
-      </div>
-      <button type="submit" class="submit-btn">Sign Up</button>
-    </form>
-  </div>
-    )
+    </div>
+  );
 }
+
+export default AddCard;

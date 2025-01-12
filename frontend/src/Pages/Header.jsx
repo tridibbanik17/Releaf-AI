@@ -6,15 +6,13 @@ function Header() {
   return (
       <div id='white'>
         <div>
-          <img src="./src/assets/releaf-image2.png" alt="releaf" id='adjustsize'/>
+          <Link to="/" id='adjustsize'><img src="./src/assets/releaf-image2.png" alt="releaf" id='adjustsize'/></Link>
           <ul>
-            <li id='nav2'>
-              releaf
-            </li>
-            <Link to="/login" id='nav'>LOGIN</Link>
-            <Link to="signup" id='nav'>SIGN UP</Link>
-            <Link to="/query" id='nav'>QUERY</Link>
-            <Link to="/" id='nav'>HOME</Link>
+            <Link to="/" id='nav2'>releaf</Link>
+            <Link to="/login" id='nav'>Log in</Link>
+            <Link to="signup" id='nav'>Sign up</Link>
+            <Link to="/query" id='nav'>Query</Link>
+            <Link to="/" id='nav'>Home</Link>
           </ul>
         </div>
         

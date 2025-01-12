@@ -86,7 +86,7 @@ function SignUp() {
                 gap: 1,
               }}
             >
-            <form onSubmit={handleSubmit(async (data) => {
+                <FormControl onSubmit={handleSubmit(async (data) => {
                 try {
                   const response = await axiosPrivate.post("/auth/register", data);
                   navigate("/login");
@@ -94,15 +94,14 @@ function SignUp() {
                   console.log(error);
                 }
               })}>
-                <FormControl>
                   <FormLabel>Username</FormLabel>
                   <TextField
                     id="username"
                     type="text"
-                    placeholder="your@email.com"
-                    fullWidth
+                    placeholder="username"
                     variant="outlined"
                     {...register("username")}
+                    sx={{ width: '100%' }}
                   />
                 </FormControl>
                 <FormControl>
@@ -119,7 +118,6 @@ function SignUp() {
                 <Button type="submit" fullWidth variant="contained" id='fillgreen'>
                   Sign up
                 </Button>
-              </form>
             </Box>
           </Card>
         </SignInContainer>
