@@ -41,22 +41,22 @@ router.post("/", async (req, res) => {
     let finalQuery = "";
     let urls = [];
 
+    console.log("Key = " + process.env.PLANT_API_KEY);
+
     // Get plant images and scientific names from API
     for (let i = 1; i <= 3; i++) {
       const speciesKey = `species${i}`;
       const speciesName = cohereRes[speciesKey];
 
       if (speciesName) {
-        const url = `https://perenual.com/api/species-list?key=sk-j2Qg678353dca52168202&q=${encodeURIComponent(
-          speciesName
-        )}`;
+        const url = `https://trefle.io/api/v1/plants?token=${process.env.PLANT_API_KEY}&q=${speciesName}`;
 
         try {
           const imagesResponse = await axios.get(url);
 
-          if (imagesResponse.data?.data?.[0]?.scientific_name) {
-            urls.push(imagesResponse.data.data[0].default_image.original_url);
-            finalQuery += imagesResponse.data.data[0].scientific_name[0] + "\n";
+          if (imagesResponse.data?.data[0]?.scientific_name) {
+            urls.push(imagesResponse.data.data[0].image_url);
+            finalQuery += imagesResponse.data.data[0].scientific_name + "\n";
           } else {
             console.warn(`No data for species: ${speciesName}`);
           }
@@ -68,6 +68,8 @@ router.post("/", async (req, res) => {
         }
       }
     }
+
+    console.log("Final query" + finalQuery);
 
     // Schema for the second Cohere API call
     const speciesSchema = {

@@ -8,7 +8,6 @@ const bodyPaser = require("body-parser");
 const { isAuthenticated } = require("./utils.js");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-
 require("dotenv").config();
 
 initializePassport(passport);
@@ -16,7 +15,7 @@ initializePassport(passport);
 const User = require("./models/User");
 
 const corsOptions = {
-  origin: process.env.ORIGIN || "http://localhost:5173",
+  origin: process.env.ORIGIN,
   credentials: true,
   methods: ["GET", "POST", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -46,7 +45,7 @@ app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 app.use(cookieParser());
 
-console.log("Allowed Origin: ", process.env.ORIGIN || "http://localhost:5173/");
+console.log("Allowed Origin: ", process.env.ORIGIN);
 
 // Routes
 app.use("/auth", authRoutes);
@@ -55,7 +54,5 @@ app.use("/user", isAuthenticated, userRoutes);
 
 // Start server
 sequelize.sync({ alter: true }).then(() => {
-  app.listen(5000, () =>
-    console.log("Server is running on http://localhost:5000")
-  );
+  app.listen(5000, () => console.log("Server is running on port 5000"));
 });
