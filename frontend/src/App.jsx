@@ -1,13 +1,12 @@
 import './App.css'
 import Header from './Pages/Header'
+import Page2 from './Pages/Page2'
 
 function App() {
+  
   return (
     <>
-      <Header/>
-      <div>
-        <h1>Plant-ly</h1>
-      </div>
+      <Page2/>
     </>
   )
 }
