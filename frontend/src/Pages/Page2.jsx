@@ -7,15 +7,15 @@ function Page2() {
       <h1>Welcome </h1>
       <div classname="card-container">
       <PlantCard
-        imageSrc="/src/assets/plant.jpg"
+        imageSrc="./src/assets/plant.jpg"
         text="Plant"
       />
       <PlantCard
-        imageSrc="/src/assets/plant.jpg"
+        imageSrc="./src/assets/plant.jpg"
         text="Plant 1"
       />
       <PlantCard
-        imageSrc="/src/assets/plant.jpg"
+        imageSrc="./src/assets/plant.jpg"
         text="Plant 2"
       />
       </div>

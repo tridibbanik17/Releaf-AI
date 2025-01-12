@@ -1,20 +1,15 @@
+import { li } from "framer-motion/client"
 import "./Header.css"
+import { Link } from "react-router-dom"
 
 function Header() {
   return (
-      <div id='tealgreen'>
-        <div class='right'>
+      <div id='white'>
+        <div>
           <img src="./src/assets/releaf-image2.png" alt="releaf" id='adjustsize'/>
-          <ul>
-            <li id='nav2'>
-              <strong>re-leaf</strong>
-            </li>
-            <li id='nav'>
-              LOGIN
-            </li>
-            <li id='nav'>
-              HOME
-            </li>
+          <ul id='nav'>
+            <Link to="/" id='nav2'>Home</Link>
+            <Link to="/login" id='nav2'>LOGIN</Link>
           </ul>
         </div>
         

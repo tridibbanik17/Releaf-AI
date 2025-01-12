@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-#tealgreen {
+#white {
     background-color: white;
     padding: 7px;
     overflow: hidden;
@@ -19,10 +19,6 @@
     gap: 1rem;
     align-items: stretch;
     height: 100%;
-}
-
-#nav:hover {
-    background-color: 	#7dd0ae;
 }
 
 #nav2 {
