@@ -2,15 +2,15 @@ const express = require("express");
 const router = express.Router();
 const Plant = require("../models/Plant");
 const cohere = require("../cohere");
+const axios = require("axios");
 
 router.get("/plants", async (req, res) => {
   const plants = await Plant.findAll({ where: { user_id: req.user.id } });
   res.send(plants);
 });
 
-// Expects a string with a query
 router.post("/plants", async (req, res) => {
-  const { plantName, imageUrl, location } = req.body;
+  const { plantName, location } = req.body;
 
   try {
     // Send request for info to cohere
@@ -20,7 +20,7 @@ router.post("/plants", async (req, res) => {
         {
           role: "system",
           content: `Find the plant based on the name and use the location where it is stored in the house
-          provide information about the maintenance level, sunlight, and following in one sentence:
+          provide information about the scientific name, maintenance level, sunlight, and following in one sentence:
             - watering schedule
             - lifespan (quantify in weeks, months, years. ex: 2 weeks)
             
@@ -38,6 +38,7 @@ router.post("/plants", async (req, res) => {
         schema: {
           type: "object",
           properties: {
+            scientific_name: { type: "string" },
             maintenance: {
               type: "string",
               enum: ["minimal", "low", "moderate", "high", "intensive"],
@@ -52,6 +53,7 @@ router.post("/plants", async (req, res) => {
             benefits: { type: "string" },
           },
           required: [
+            "scientific_name",
             "maintenance",
             "sunlight",
             "watering",
@@ -64,6 +66,11 @@ router.post("/plants", async (req, res) => {
     });
 
     const plantRes = JSON.parse(response.message.content[0].text);
+
+    // Get an image
+    const url = `https://trefle.io/api/v1/plants?token=${process.env.PLANT_API_KEY}&q=${plantRes.scientific_name}`;
+    const imagesResponse = await axios.get(url);
+    const imageUrl = imagesResponse.data.data[0].image_url;
 
     const plant = await Plant.create({
       user_id: req.user.id,

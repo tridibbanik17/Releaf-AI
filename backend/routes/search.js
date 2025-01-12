@@ -49,14 +49,13 @@ router.post("/", async (req, res) => {
       const speciesName = cohereRes[speciesKey];
 
       if (speciesName) {
-        const url = `https://trefle.io/api/v1/plants?token=${process.env.PLANT_API_KEY}&q=${speciesName}`;
-
+        const url = `https://perenual.com/api/species-list?key=${process.env.PLANT_API_KEY}&q=${speciesName}`;
         try {
           const imagesResponse = await axios.get(url);
-
+          console.log(imagesResponse.data.data[0].default_image.original_url);
           if (imagesResponse.data?.data[0]?.scientific_name) {
-            urls.push(imagesResponse.data.data[0].image_url);
-            finalQuery += imagesResponse.data.data[0].scientific_name + "\n";
+            urls.push(imagesResponse.data.data[0].default_image.original_url);
+            finalQuery += imagesResponse.data.data[0].scientific_name[0] + "\n";
           } else {
             console.warn(`No data for species: ${speciesName}`);
           }
@@ -69,7 +68,7 @@ router.post("/", async (req, res) => {
       }
     }
 
-    console.log("Final query" + finalQuery);
+    console.log("Final query: " + finalQuery);
 
     // Schema for the second Cohere API call
     const speciesSchema = {
@@ -134,7 +133,7 @@ router.post("/", async (req, res) => {
       }
     }
 
-    res.send(finalRes);
+    return res.send(finalRes);
   } catch (error) {
     console.error(error);
     res.status(500).send(error.message || "An error occurred.");

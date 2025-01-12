@@ -6,6 +6,7 @@ import SignUp from './Pages/SignUp.jsx'
 import Query from './Pages/Query.jsx'
 import LogIn from './Pages/LogIn.jsx'
 import { img } from "framer-motion/client"
+import AddCard from "./Pages/AddCard.jsx"
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/query" element={<Query />}/>
                     <Route path="/login" element={<LogIn />}/>
+                    <Route path="/dashboard/add" element={<AddCard/>}/>
                 </Routes>
             </div>
 
