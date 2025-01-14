@@ -134,7 +134,7 @@ Use a database management tool like pgAdmin to verify the DeltaHacks2025 databas
 You’re all set!
 
 #### Front-end Showcase
-![image](https://github.com/user-attachments/assets/215de371-c4b6-452e-8306-c76cb9a609f7)
+![image](https://github.com/user-attachments/assets/b3a8eb3a-c8c1-4b37-a2c3-14ab0859b222)
 Landing page
 
 ![image](https://github.com/user-attachments/assets/aea8f4e4-081d-4674-9262-1e6d12e2fd75)
