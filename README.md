@@ -28,6 +28,7 @@ Landing page
 Query page where users can enter their preferences
 
 ![image](https://github.com/user-attachments/assets/a9ff4793-09fa-4f7e-a03d-fcac82bb2dae)
+
 Adding a plant pop up
 
 
