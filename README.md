@@ -4,8 +4,11 @@
 This Artificial Intelligence application was designed to enhance the user's indoor plant experience. It offers personalized recommendations for houseplants tailored to the user's needs and preferences, along with a comprehensive tracking system to help them manage and care for their plants. By simplifying the plant selection and care process, Releaf not only elevates the living or work environment but also promotes mental well-being, making plant ownership effortless and enjoyable. 
 
 Backend: JavaScript, Axios, Node.js
+
 Frontend: React, HTML, CSS
+
 Plant API: https://perenual.com/docs/api
+
 Local Database: PostgreSQL
 
 ### How the User Can Use the Program
