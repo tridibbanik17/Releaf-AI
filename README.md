@@ -42,8 +42,8 @@ Ensure the following are installed on your system:
 Clone the repository to your local machine and navigate to the project folder:
 
 ```bash
-git clone <repository_url>
-cd <repository_folder>
+git clone https://github.com/tridibbanik17/DeltaHacks2025.git
+cd ./DeltaHacks2025
 ```
 
 ---
@@ -53,7 +53,7 @@ cd <repository_folder>
 Navigate to the backend directory:
 
 ```bash
-cd backend
+cd ./backend
 ```
 
 Install backend dependencies:
@@ -142,7 +142,7 @@ Query page where users can enter their preferences
 
 ![image](https://github.com/user-attachments/assets/a9ff4793-09fa-4f7e-a03d-fcac82bb2dae)
 
-Adding a plant pop up
+Adding a plant pop-up
 
 
 
