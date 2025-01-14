@@ -19,3 +19,17 @@ Local Database: PostgreSQL
 1. Creating an account and sign-in: The local database is designed with PostgreSQL. The user table contains the user ID, user name, hidden password, etc. The user authentication is enabled through cookies.
 2. User dashboard: When the user uploads a plant name and plant location in the house, the Axios API makes a call to Perenual API that gets the correct data the user is looking for from a public database with data on 10000+ plants and sends that data to Axios API. Axios API then makes a call to Cohere API and it receives the call. According to the specific prompt (written by us), Cohere APU collects the 3 best plant names and plant properties and corresponding plant images. If the plant name field or any other property field is blank, ignore that plant and increment the number of iterations of the for loop by 1.
 3. User query: When the user writes to the search bar, Axios API makes a call to the Cohere API. Cohere API does a web search, retrieves data from the web search, organizes and formats the data and sends the data to Axios API and Axios API returns the collected data (plant's common name, scientific name, watering schedule and sunlight exposure tolerance) to the user.
+
+#### Front-end Showcase
+![image](https://github.com/user-attachments/assets/215de371-c4b6-452e-8306-c76cb9a609f7)
+Landing page
+
+![image](https://github.com/user-attachments/assets/aea8f4e4-081d-4674-9262-1e6d12e2fd75)
+Query page where users can enter their preferences
+
+![image](https://github.com/user-attachments/assets/a9ff4793-09fa-4f7e-a03d-fcac82bb2dae)
+Adding a plant pop up
+
+
+
+
