@@ -2,22 +2,15 @@ const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
 const sequelize = new Sequelize(
-  "DeltaHacks2025",
-  "postgres",
-  process.env.DB_PASS,
+  "DeltaHacks2025",           // Database name
+  "deltahacks_user",          // Database user
+  "deltahacks",               // Database password
   {
-    host: "localhost",
-    dialect: "postgres",
+    host: "localhost",        // Host where the database is running
+    port: 5432,               // PostgreSQL port
+    dialect: "postgres",      // Specifies the database type (PostgreSQL in this case)
   }
 );
 
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection has been established successfully.");
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
-})();
-
 module.exports = sequelize;
+
