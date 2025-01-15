@@ -135,37 +135,37 @@ You’re all set!
 
 #### Front-end Showcase
 
-<figure>
-  <img src="https://github.com/user-attachments/assets/b3a8eb3a-c8c1-4b37-a2c3-14ab0859b222" alt="Landing Page" />
-  <figcaption>Landing Page</figcaption>
+<figure style="margin-bottom: 20px;">
+  <img src="https://github.com/user-attachments/assets/b3a8eb3a-c8c1-4b37-a2c3-14ab0859b222" alt="Landing Page" style="max-width: 100%; border-radius: 8px;" />
+  <figcaption style="text-align: center; font-size: 1rem; color: #555; margin-top: 10px;">Landing Page</figcaption>
 </figure>
 
-<figure>
-  <img src="https://github.com/user-attachments/assets/77e0e258-eff4-40da-b393-a1923609c3f8" alt="Sign-up option" />
-  <figcaption>Sign-up option</figcaption>
+<figure style="margin-bottom: 20px;">
+  <img src="https://github.com/user-attachments/assets/77e0e258-eff4-40da-b393-a1923609c3f8" alt="Sign-up option" style="max-width: 100%; border-radius: 8px;" />
+  <figcaption style="text-align: center; font-size: 1rem; color: #555; margin-top: 10px;">Sign-up option</figcaption>
 </figure>
 
-<figure>
-  <img src="https://github.com/user-attachments/assets/aea8f4e4-081d-4674-9262-1e6d12e2fd75" alt="Query page where users can enter their preferences" />
-  <figcaption>Query page where users can enter their preferences</figcaption>
+<figure style="margin-bottom: 20px;">
+  <img src="https://github.com/user-attachments/assets/aea8f4e4-081d-4674-9262-1e6d12e2fd75" alt="Query page where users can enter their preferences" style="max-width: 100%; border-radius: 8px;" />
+  <figcaption style="text-align: center; font-size: 1rem; color: #555; margin-top: 10px;">Query page where users can enter their preferences</figcaption>
 </figure>
 
-<figure>
-  <img src="https://github.com/user-attachments/assets/a9ff4793-09fa-4f7e-a03d-fcac82bb2dae" alt="Adding a plant pop-up" />
-  <figcaption>Adding a plant pop-up</figcaption>
+<figure style="margin-bottom: 20px;">
+  <img src="https://github.com/user-attachments/assets/a9ff4793-09fa-4f7e-a03d-fcac82bb2dae" alt="Adding a plant pop-up" style="max-width: 100%; border-radius: 8px;" />
+  <figcaption style="text-align: center; font-size: 1rem; color: #555; margin-top: 10px;">Adding a plant pop-up</figcaption>
 </figure>
 
-<figure>
-  <img src="https://github.com/user-attachments/assets/dee8f48f-5eae-40c2-b30f-67bf86cb8f36" alt="Query responses with top three plant recommendations" />
-  <figcaption>Query responses with top three plant recommendations</figcaption>
+<figure style="margin-bottom: 20px;">
+  <img src="https://github.com/user-attachments/assets/dee8f48f-5eae-40c2-b30f-67bf86cb8f36" alt="Query responses with top three plant recommendations" style="max-width: 100%; border-radius: 8px;" />
+  <figcaption style="text-align: center; font-size: 1rem; color: #555; margin-top: 10px;">Query responses with top three plant recommendations</figcaption>
 </figure>
 
-<figure>
-  <img src="https://github.com/user-attachments/assets/126086f1-2dfe-462d-b685-8047e74a7c3c" alt="Generate plant details" />
-  <figcaption>Generate plant details</figcaption>
+<figure style="margin-bottom: 20px;">
+  <img src="https://github.com/user-attachments/assets/126086f1-2dfe-462d-b685-8047e74a7c3c" alt="Generate plant details" style="max-width: 100%; border-radius: 8px;" />
+  <figcaption style="text-align: center; font-size: 1rem; color: #555; margin-top: 10px;">Generate plant details</figcaption>
 </figure>
 
-<figure>
-  <img src="https://github.com/user-attachments/assets/00c67f9f-d0cc-47f2-9ebc-f3e82dfaa394" alt="Homepage with links to informative external articles" />
-  <figcaption>Homepage with links to informative external articles</figcaption>
+<figure style="margin-bottom: 20px;">
+  <img src="https://github.com/user-attachments/assets/00c67f9f-d0cc-47f2-9ebc-f3e82dfaa394" alt="Homepage with links to informative external articles" style="max-width: 100%; border-radius: 8px;" />
+  <figcaption style="text-align: center; font-size: 1rem; color: #555; margin-top: 10px;">Homepage with links to informative external articles</figcaption>
 </figure>
