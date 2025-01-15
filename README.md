@@ -134,23 +134,38 @@ Use a database management tool like pgAdmin to verify the DeltaHacks2025 databas
 You’re all set!
 
 #### Front-end Showcase
-![image](https://github.com/user-attachments/assets/b3a8eb3a-c8c1-4b37-a2c3-14ab0859b222)
-Landing page
 
-![image](https://github.com/user-attachments/assets/77e0e258-eff4-40da-b393-a1923609c3f8)
-Sign-up option
+<figure>
+  <img src="https://github.com/user-attachments/assets/b3a8eb3a-c8c1-4b37-a2c3-14ab0859b222" alt="Landing Page" />
+  <figcaption>Landing Page</figcaption>
+</figure>
 
-![image](https://github.com/user-attachments/assets/aea8f4e4-081d-4674-9262-1e6d12e2fd75)
-Query page where users can enter their preferences
+<figure>
+  <img src="https://github.com/user-attachments/assets/77e0e258-eff4-40da-b393-a1923609c3f8" alt="Sign-up option" />
+  <figcaption>Sign-up option</figcaption>
+</figure>
 
-![image](https://github.com/user-attachments/assets/a9ff4793-09fa-4f7e-a03d-fcac82bb2dae)
-Adding a plant pop-up
+<figure>
+  <img src="https://github.com/user-attachments/assets/aea8f4e4-081d-4674-9262-1e6d12e2fd75" alt="Query page where users can enter their preferences" />
+  <figcaption>Query page where users can enter their preferences</figcaption>
+</figure>
 
-![image](https://github.com/user-attachments/assets/dee8f48f-5eae-40c2-b30f-67bf86cb8f36)
-Query response with top three plant recommendations
+<figure>
+  <img src="https://github.com/user-attachments/assets/a9ff4793-09fa-4f7e-a03d-fcac82bb2dae" alt="Adding a plant pop-up" />
+  <figcaption>Adding a plant pop-up</figcaption>
+</figure>
 
-![image](https://github.com/user-attachments/assets/126086f1-2dfe-462d-b685-8047e74a7c3c)
-Generate plant details
+<figure>
+  <img src="https://github.com/user-attachments/assets/dee8f48f-5eae-40c2-b30f-67bf86cb8f36" alt="Query responses with top three plant recommendations" />
+  <figcaption>Query responses with top three plant recommendations</figcaption>
+</figure>
 
-![image](https://github.com/user-attachments/assets/00c67f9f-d0cc-47f2-9ebc-f3e82dfaa394)
-Homepage with links to informative external articles
+<figure>
+  <img src="https://github.com/user-attachments/assets/126086f1-2dfe-462d-b685-8047e74a7c3c" alt="Generate plant details" />
+  <figcaption>Generate plant details</figcaption>
+</figure>
+
+<figure>
+  <img src="https://github.com/user-attachments/assets/00c67f9f-d0cc-47f2-9ebc-f3e82dfaa394" alt="Homepage with links to informative external articles" />
+  <figcaption>Homepage with links to informative external articles</figcaption>
+</figure>
