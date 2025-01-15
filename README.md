@@ -27,7 +27,7 @@ Click the thumbnail to watch the video on YouTube.
 2. User dashboard: When the user uploads a plant name and plant location in the house, the Axios API makes a call to Perenual API that gets the correct data the user is looking for from a public database with data on 10000+ plants and sends that data to Axios API. Axios API then makes a call to Cohere API and it receives the call. According to the specific prompt (written by us), Cohere APU collects the 3 best plant names and plant properties and corresponding plant images. If the plant name field or any other property field is blank, ignore that plant and increment the number of iterations of the for loop by 1.
 3. User query: When the user writes to the search bar, Axios API makes a call to the Cohere API. Cohere API does a web search, retrieves data from the web search, organizes and formats the data and sends the data to Axios API and Axios API returns the collected data (plant's common name, scientific name, watering schedule and sunlight exposure tolerance) to the user.
 
-### DeltaHacks2025 Setup Guide
+### Releaf Application Setup Guide
 
 Follow these steps to set up the project and run it on your local machine.
 
@@ -75,7 +75,7 @@ Create a .env file in the backend directory if it doesn't already exist.
 Add the following values to the file:
 
 ```env
-DB_PASS='#Tomiwa12'
+DB_PASS='deltahacks'
 PLANT_API_KEY='sk-kj1z6783d86da43888202'
 ORIGIN='http://localhost:5173'
 ```
