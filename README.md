@@ -16,6 +16,12 @@ Local Database: PostgreSQL
 2. In the Dashboard section, the user can add the plant name and location it is located in their house to get information on how to take care of the plant. The information includes: maintenance, sunlight exposure tolerance, watering schedule, lifespan, health benefits and one general tip. The user can add and remove a plant card. If the user has an account, the search history will be saved to the local database.
 3. In the Query section's search bar, the user writes about the desired plant they want to buy in future. The program outputs the top three recommended plants with the plant's common name, scientific name, and a picture of the plant. 
 
+### Video Demonstration  
+Below is a demonstration of how to use the application:  
+
+[![Watch the video](https://img.youtube.com/vi/M3B2Kt0yGDE/0.jpg)](https://www.youtube.com/watch?v=M3B2Kt0yGDE)  
+Click the thumbnail to watch the video on YouTube.
+
 ### Technical Overview of How the Program Works
 1. Creating an account and sign-in: The local database is designed with PostgreSQL. The user table contains the user ID, user name, hidden password, etc. The user authentication is enabled through cookies.
 2. User dashboard: When the user uploads a plant name and plant location in the house, the Axios API makes a call to Perenual API that gets the correct data the user is looking for from a public database with data on 10000+ plants and sends that data to Axios API. Axios API then makes a call to Cohere API and it receives the call. According to the specific prompt (written by us), Cohere APU collects the 3 best plant names and plant properties and corresponding plant images. If the plant name field or any other property field is blank, ignore that plant and increment the number of iterations of the for loop by 1.
